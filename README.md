@@ -38,7 +38,7 @@ python MLpred_Joint.py -g1 ./example/train_set -g2 ./example/valid_set -g3 ./exa
 3. L&E file for test set
 
 #### Option:
-C. Covariate matrix of training set(in Plink format used for association analysis). This is an option input containing the relevant covariates for association analysis (such as gender, age, PCs from genotype data etc.). The format could be found in https://www.cog-genomics.org/plink/1.9/input#covar).
+##### C. Covariate matrix of training set(in Plink format used for association analysis). This is an option input containing the relevant covariates for association analysis (such as gender, age, PCs from genotype data etc.). The format could be found in https://www.cog-genomics.org/plink/1.9/input#covar).
 
 ### Output 
 #### When only genotype data are used for the prediction using MLpred_Geno.py
