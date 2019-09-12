@@ -4,7 +4,7 @@
 
 ## Download:
 ```
-git clone https://github.com/MLpred/MLpred.git
+git clone https://github.com/zhanglu295/MLpred.git
 ```
 To download example files, go to <a href="https://drive.google.com/file/d/1_bc3qEaujjH4RawPH8rCQ96n5HRxhNwo/view?usp=sharing">Google Drive Link</a>. 
 ## Third party software
@@ -13,12 +13,14 @@ To download example files, go to <a href="https://drive.google.com/file/d/1_bc3q
 #### if only genotype data are given
 ```
 mkdir ./testgeno
+tar zxvf example.tar.gz
 python MLpred_Geno.py -g1 ./example/train_set -g2 ./example/valid_set -g3 ./example/test_set -covar ./example/train_cov.matrix -out ./testgeno/
 ```
 
 #### if both of the genotype and L&E data are given
 ```
 mkdir ./testjoint
+tar zxvf example.tar.gz
 python MLpred_Joint.py -g1 ./example/train_set -g2 ./example/valid_set -g3 ./example/test_set -p1 ./example/train_LE.matrix -p2 ./example/valid_LE.matrix -p3 ./example/test_LE.matrix -covar ./example/train_cov.matrix -out ./testjoint/
 ```
 
@@ -46,5 +48,5 @@ MLpred_Geno.py would generate the personal risk scores and AUC scores for valida
 #### When both genotype and L&E data are used for the prediction using MLpred_Joint.py
 MLpred_Joint.py would generate the personal risk scores and AUC scores for validation and test sets:
 A. AUC scores in validation and test sets (/Ensemble_All/AUC_Ensemble.scores).
-B. Personal risk scores in validation (/Ensemble_All/Risk_geno_valid.scores) and test sets (/Ensemble_All/Risk_geno_test.scores).
+B. Personal risk scores in validation (/Ensemble_All/Risk_All_valid.scores) and test sets (/Ensemble_All/Risk_All_test.scores).
  
