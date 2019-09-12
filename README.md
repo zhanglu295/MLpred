@@ -32,7 +32,7 @@ python MLpred_Joint.py -g1 ./example/train_set -g2 ./example/valid_set -g3 ./exa
 2. The prefix of genotype files (without .bed) of validation set
 3. The prefix of genotype files (without .bed) of test set
 
-##### B. Only used in MLpred_Joint.py. Individual's lifestyle and Environment factors (L&E). It should be a plain text file and each row is a L&E factor and each column represents an individual.
+##### B. Only used in MLpred_Joint.py. Individual's L&E factors. It should be a plain text file and each row is a L&E factor and each column represents an individual.
 1. L&E file for training set
 2. L&E file for validation set
 3. L&E file for test set
