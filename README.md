@@ -27,7 +27,7 @@ python MLpred_Joint.py -g1 ./example/train_set -g2 ./example/valid_set -g3 ./exa
 ## Basic Usage
 ### Input
 #### Required:
-##### A. Genotype file. MLpred requries the individual's genotype data in Plink binary format (with .bed/.bim/.fam).
+##### A. Genotype file. MLpred requries the individual's genotype data in PLink binary format (with .bed/.bim/.fam).
 1. The prefix of genotype files (without .bed) of training set
 2. The prefix of genotype files (without .bed) of validation set
 3. The prefix of genotype files (without .bed) of test set
@@ -38,7 +38,7 @@ python MLpred_Joint.py -g1 ./example/train_set -g2 ./example/valid_set -g3 ./exa
 3. L&E file for test set
 
 #### Option:
-##### C. Covariate matrix of training set(in Plink format used for association analysis). This is an option input containing the relevant covariates for association analysis (such as gender, age, PCs from genotype data etc.). The format could be found in https://www.cog-genomics.org/plink/1.9/input#covar).
+##### C. Covariate matrix of training set(in PLink format used for association analysis). This is an option input containing the relevant covariates for association analysis (such as gender, age, PCs from genotype data etc.). The format could be found in https://www.cog-genomics.org/plink/1.9/input#covar).
 
 ### Output 
 #### When only genotype data are used for the prediction using MLpred_Geno.py
