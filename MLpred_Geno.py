@@ -119,27 +119,42 @@ def LD_pruning(args):
     para=args.geno_train
     if os.stat(args.outpath+"/association_analysis/5E3_SNP").st_size!=0:
         os.system('plink --bfile '+para+' --extract '+args.outpath+'/association_analysis/5E3_SNP --make-bed --out '+args.outpath+'/LD_pruning/5E3_train_extract')
-        os.system('plink --bfile '+args.outpath+'/LD_pruning/5E3_train_extract --indep-pairwise 50 5 0.5 --out '+args.outpath+'/LD_pruning/train_5E3')
-        os.system('plink --bfile '+args.outpath+'/LD_pruning/5E3_train_extract --prune --extract '+args.outpath+'/LD_pruning/train_5E3.prune.in --make-bed --out '+args.outpath+'/LD_pruning/train_5E3_pruning')
-        os.system('plink --bfile '+args.outpath+'/LD_pruning/train_5E3_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/train_5E3_recodeA')
-        
+        if len(open(args.outpath+"/association_analysis/5E3_SNP",'rU').readlines())!=1:
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/5E3_train_extract --indep-pairwise 50 5 0.5 --out '+args.outpath+'/LD_pruning/train_5E3')
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/5E3_train_extract --prune --extract '+args.outpath+'/LD_pruning/train_5E3.prune.in --make-bed --out '+args.outpath+'/LD_pruning/train_5E3_pruning')
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/train_5E3_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/train_5E3_recodeA')
+        else:
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/5E3_train_extract --prune --make-bed --out '+args.outpath+'/LD_pruning/train_5E3_pruning')
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/5E3_train_extract --prune --recode A --out '+args.outpath+'/LD_pruning/train_5E3_recodeA')
+
     if os.stat(args.outpath+"/association_analysis/5E4_SNP").st_size!=0:
         os.system('plink --bfile '+para+' --extract '+args.outpath+'/association_analysis/5E4_SNP --make-bed --out '+args.outpath+'/LD_pruning/5E4_train_extract')
-        os.system('plink --bfile '+args.outpath+'/LD_pruning/5E4_train_extract --indep-pairwise 50 5 0.5 --out '+args.outpath+'/LD_pruning/train_5E4')
-        os.system('plink --bfile '+args.outpath+'/LD_pruning/5E4_train_extract --prune --extract '+args.outpath+'/LD_pruning/train_5E4.prune.in --make-bed --out '+args.outpath+'/LD_pruning/train_5E4_pruning')
-        os.system('plink --bfile '+args.outpath+'/LD_pruning/train_5E4_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/train_5E4_recodeA')
+        if len(open(args.outpath+"/association_analysis/5E4_SNP",'rU').readlines())!=1:
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/5E4_train_extract --indep-pairwise 50 5 0.5 --out '+args.outpath+'/LD_pruning/train_5E4')
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/5E4_train_extract --prune --extract '+args.outpath+'/LD_pruning/train_5E4.prune.in --make-bed --out '+args.outpath+'/LD_pruning/train_5E4_pruning')
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/train_5E4_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/train_5E4_recodeA')
+        else:
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/5E4_train_extract --prune --make-bed --out '+args.outpath+'/LD_pruning/train_5E4_pruning')
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/5E4_train_extract --prune --recode A --out '+args.outpath+'/LD_pruning/train_5E4_recodeA')
 
     if os.stat(args.outpath+"/association_analysis/5E5_SNP").st_size!=0:
         os.system('plink --bfile '+para+' --extract '+args.outpath+'/association_analysis/5E5_SNP --make-bed --out '+args.outpath+'/LD_pruning/5E5_train_extract')
-        os.system('plink --bfile '+args.outpath+'/LD_pruning/5E5_train_extract --indep-pairwise 50 5 0.5 --out '+args.outpath+'/LD_pruning/train_5E5')
-        os.system('plink --bfile '+args.outpath+'/LD_pruning/5E5_train_extract --prune --extract '+args.outpath+'/LD_pruning/train_5E5.prune.in --make-bed --out '+args.outpath+'/LD_pruning/train_5E5_pruning')
-        os.system('plink --bfile '+args.outpath+'/LD_pruning/train_5E5_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/train_5E5_recodeA')
-     
+        if len(open(args.outpath+"/association_analysis/5E5_SNP",'rU').readlines())!=1:
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/5E5_train_extract --indep-pairwise 50 5 0.5 --out '+args.outpath+'/LD_pruning/train_5E5')
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/5E5_train_extract --prune --extract '+args.outpath+'/LD_pruning/train_5E5.prune.in --make-bed --out '+args.outpath+'/LD_pruning/train_5E5_pruning')
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/train_5E5_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/train_5E5_recodeA')
+        else:
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/5E5_train_extract --prune --make-bed --out '+args.outpath+'/LD_pruning/train_5E5_pruning')
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/5E5_train_extract --prune --recode A --out '+args.outpath+'/LD_pruning/train_5E5_recodeA')
     if os.stat(args.outpath+"/association_analysis/5E6_SNP").st_size!=0:
         os.system('plink --bfile '+para+' --extract '+args.outpath+'/association_analysis/5E6_SNP --make-bed --out '+args.outpath+'/LD_pruning/5E6_train_extract')
-        os.system('plink --bfile '+args.outpath+'/LD_pruning/5E6_train_extract --indep-pairwise 50 5 0.5 --out '+args.outpath+'/LD_pruning/train_5E6')
-        os.system('plink --bfile '+args.outpath+'/LD_pruning/5E6_train_extract --prune --extract '+args.outpath+'/LD_pruning/train_5E6.prune.in --make-bed --out '+args.outpath+'/LD_pruning/train_5E6_pruning')
-        os.system('plink --bfile '+args.outpath+'/LD_pruning/train_5E6_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/train_5E6_recodeA')
+        if len(open(args.outpath+"/association_analysis/5E6_SNP",'rU').readlines())!=1:
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/5E6_train_extract --indep-pairwise 50 5 0.5 --out '+args.outpath+'/LD_pruning/train_5E6')
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/5E6_train_extract --prune --extract '+args.outpath+'/LD_pruning/train_5E6.prune.in --make-bed --out '+args.outpath+'/LD_pruning/train_5E6_pruning')
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/train_5E6_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/train_5E6_recodeA')
+        else:
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/5E6_train_extract --prune --make-bed --out '+args.outpath+'/LD_pruning/train_5E6_pruning')
+            os.system('plink --bfile '+args.outpath+'/LD_pruning/5E6_train_extract --prune --recode A --out '+args.outpath+'/LD_pruning/train_5E6_recodeA')
 
     for data in ['valid','test']:
         para=''
@@ -148,17 +163,34 @@ def LD_pruning(args):
         if data=='test':
             para=args.geno_test
         if os.stat(args.outpath+"/association_analysis/5E3_SNP").st_size!=0:
-            os.system('plink --bfile '+para+' --prune --extract '+args.outpath+'/LD_pruning/train_5E3.prune.in --make-bed --out '+args.outpath+'/LD_pruning/'+data+'_5E3_pruning')
-            os.system('plink --bfile '+args.outpath+'/LD_pruning/'+data+'_5E3_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/'+data+'_5E3_recodeA')
+            if len(open(args.outpath+"/association_analysis/5E3_SNP",'rU').readlines())!=1:
+                os.system('plink --bfile '+para+' --prune --extract '+args.outpath+'/LD_pruning/train_5E3.prune.in --make-bed --out '+args.outpath+'/LD_pruning/'+data+'_5E3_pruning')
+                os.system('plink --bfile '+args.outpath+'/LD_pruning/'+data+'_5E3_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/'+data+'_5E3_recodeA')
+            else:
+                os.system('plink --bfile '+para+' --prune --extract '+args.outpath+'/association_analysis/5E3_SNP --make-bed --out '+args.outpath+'/LD_pruning/'+data+'_5E3_pruning')
+                os.system('plink --bfile '+args.outpath+'/LD_pruning/'+data+'_5E3_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/'+data+'_5E3_recodeA')
+
         if os.stat(args.outpath+"/association_analysis/5E4_SNP").st_size!=0:
-            os.system('plink --bfile '+para+' --prune --extract '+args.outpath+'/LD_pruning/train_5E4.prune.in --make-bed --out '+args.outpath+'/LD_pruning/'+data+'_5E4_pruning')
-            os.system('plink --bfile '+args.outpath+'/LD_pruning/'+data+'_5E4_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/'+data+'_5E4_recodeA')
+            if len(open(args.outpath+"/association_analysis/5E4_SNP",'rU').readlines())!=1:
+                os.system('plink --bfile '+para+' --prune --extract '+args.outpath+'/LD_pruning/train_5E4.prune.in --make-bed --out '+args.outpath+'/LD_pruning/'+data+'_5E4_pruning')
+                os.system('plink --bfile '+args.outpath+'/LD_pruning/'+data+'_5E4_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/'+data+'_5E4_recodeA')
+            else:
+                os.system('plink --bfile '+para+' --prune --extract '+args.outpath+'/association_analysis/5E4_SNP --make-bed --out '+args.outpath+'/LD_pruning/'+data+'_5E4_pruning')
+                os.system('plink --bfile '+args.outpath+'/LD_pruning/'+data+'_5E4_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/'+data+'_5E4_recodeA')
         if os.stat(args.outpath+"/association_analysis/5E5_SNP").st_size!=0:
-            os.system('plink --bfile '+para+' --prune --extract '+args.outpath+'/LD_pruning/train_5E5.prune.in --make-bed --out '+args.outpath+'/LD_pruning/'+data+'_5E5_pruning')
-            os.system('plink --bfile '+args.outpath+'/LD_pruning/'+data+'_5E5_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/'+data+'_5E5_recodeA')
+            if len(open(args.outpath+"/association_analysis/5E5_SNP",'rU').readlines())!=1:
+                os.system('plink --bfile '+para+' --prune --extract '+args.outpath+'/LD_pruning/train_5E5.prune.in --make-bed --out '+args.outpath+'/LD_pruning/'+data+'_5E5_pruning')
+                os.system('plink --bfile '+args.outpath+'/LD_pruning/'+data+'_5E5_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/'+data+'_5E5_recodeA')
+            else:
+                os.system('plink --bfile '+para+' --prune --extract '+args.outpath+'/association_analysis/5E5_SNP --make-bed --out '+args.outpath+'/LD_pruning/'+data+'_5E5_pruning')
+                os.system('plink --bfile '+args.outpath+'/LD_pruning/'+data+'_5E5_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/'+data+'_5E5_recodeA')
         if os.stat(args.outpath+"/association_analysis/5E6_SNP").st_size!=0:
-            os.system('plink --bfile '+para+' --prune --extract '+args.outpath+'/LD_pruning/train_5E6.prune.in --make-bed --out '+args.outpath+'/LD_pruning/'+data+'_5E6_pruning')
-            os.system('plink --bfile '+args.outpath+'/LD_pruning/'+data+'_5E6_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/'+data+'_5E6_recodeA')
+            if len(open(args.outpath+"/association_analysis/5E6_SNP",'rU').readlines())!=1:
+                os.system('plink --bfile '+para+' --prune --extract '+args.outpath+'/LD_pruning/train_5E6.prune.in --make-bed --out '+args.outpath+'/LD_pruning/'+data+'_5E6_pruning')
+                os.system('plink --bfile '+args.outpath+'/LD_pruning/'+data+'_5E6_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/'+data+'_5E6_recodeA')
+            else:
+                os.system('plink --bfile '+para+' --prune --extract '+args.outpath+'/association_analysis/5E6_SNP --make-bed --out '+args.outpath+'/LD_pruning/'+data+'_5E6_pruning')
+                os.system('plink --bfile '+args.outpath+'/LD_pruning/'+data+'_5E6_pruning --prune --recode A --out '+args.outpath+'/LD_pruning/'+data+'_5E6_recodeA')
 
 def generate_G_P(path_diseaseid,path_data):
     phenotype=np.genfromtxt(path_diseaseid,dtype=str)
@@ -370,7 +402,7 @@ def ensemble_model(args):
     out.close()
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        os.system("python MLpred_Geno.py -h")
+        sys.stdout.write("Please use 'python MLpred_Geno.py -h' for more information!\n")
     elif args.geno_train=="None" or args.geno_valid=="None" or args.geno_test=="None":
         if args.geno_train=="None":
             print('Please provide genotype of training set!\n')
@@ -400,6 +432,8 @@ if __name__ == "__main__":
             step4_finish=1
             step5_finish=1
             print('Step1: Running association analysis on training set\n')
+            if not os.path.exists(args.outpath):
+                os.system('mkdir '+args.outpath)
             if not os.path.exists(args.outpath+'/association_analysis'):
                 cmd='mkdir '+args.outpath+'/association_analysis'
                 os.system(cmd)
@@ -407,7 +441,6 @@ if __name__ == "__main__":
                 cmd="plink --adjust --bfile "+args.geno_train+" --logistic --out "+args.outpath+"/association_analysis/train_assoc"
             else:
                 cmd="plink --adjust --bfile "+args.geno_train+" --covar "+args.covariates+" --logistic --out "+args.outpath+"/association_analysis/train_assoc"
-            print(cmd)
             os.system(cmd)
             if not os.path.exists(args.outpath+'/association_analysis/train_assoc.assoc.logistic.adjusted'):
                 step1_finish=0
