@@ -89,7 +89,7 @@ B. Personal risk scores for validation (Ensemble_All/Risk_All_valid.scores) and 
 
 ## Troubleshooting:
 ### Please submit issues on this github page.
-###Or contact with me through ericluzhang@comp.hkbu.edu.hk
+### Or contact with me through ericluzhang@comp.hkbu.edu.hk
 
 
 
